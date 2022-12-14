@@ -1,0 +1,14 @@
+input SignUpInput {
+   email:String!,
+   password:String!,
+   firstName:String!
+}
+
+type Query {
+   greeting:String
+   avatar:Character
+}
+
+type Mutation {
+   signUp(input:SignUpInput):String
+}

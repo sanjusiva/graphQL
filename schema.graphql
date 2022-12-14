@@ -1,0 +1,36 @@
+type Query  {
+   test: String
+   students:[Student]
+   studentById(id:ID!):Student 
+}
+type Query{
+   greetPeople(name:String!):String
+   greetingWithAuth:String
+}
+type Student {
+   id:ID!
+   firstName:String
+   lastName:String
+   password:String
+   collegeId:String
+   fullName:String
+   college:College
+}
+type College {
+   id:ID!
+   name:String
+   location:String
+   rating:Float
+}
+enum FoodType {
+   BIRIYANI
+   PANIBOORI
+   FISHFRY
+}
+type Query {
+   setFavouriteFood(food:FoodType):String
+}
+type Mutation{
+   createNewStudent(collegeId:ID,firstName:String,lastName:String):String
+   addStudent_returnsObject(collegeId:ID,firstName:String,lastName:String):Student
+}
